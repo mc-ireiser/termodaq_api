@@ -1,0 +1,82 @@
+{
+  "name": "muestreo",
+  "plural": "muestreos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "rawline": {
+      "type": "string",
+      "required": true
+    },
+    "rawfields": {
+      "type": "string",
+      "required": true
+    },
+    "latitud": {
+      "type": "number"
+    },
+    "longitud": {
+      "type": "number"
+    },
+    "fecha": {
+      "type": "date"
+    },
+    "hora": {
+      "type": "string"
+    },
+    "fecha_hora": {
+      "type": "string"
+    },
+    "temperatura_interna": {
+      "type": "number"
+    },
+    "temperatura_aire": {
+      "type": "number"
+    },
+    "temperatura_agua": {
+      "type": "number"
+    },
+    "presion": {
+      "type": "number"
+    },
+    "sensor_adicional": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "fichas": {
+      "type": "hasOne",
+      "model": "ficha",
+      "foreignKey": "userId"
+    },
+    "usuario": {
+      "type": "belongsTo",
+      "model": "usuario"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

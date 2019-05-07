@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db_mongo",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db_mongo",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db_mongo",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db_mongo",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "email"
+  },
+  "User": {
+    "dataSource": "db_mongo",
+    "public": false
+  },
+  "perfil": {
+    "dataSource": "db_mongo",
+    "public": true
+  },
+  "muestreo": {
+    "dataSource": "db_mongo",
+    "public": true
+  },
+  "usuario": {
+    "dataSource": "db_mongo",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "ficha": {
+    "dataSource": "db_mongo",
+    "public": true
+  }
+}
