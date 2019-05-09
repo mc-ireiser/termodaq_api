@@ -1,6 +1,6 @@
 {
   "restApiRoot": "/api",
-  "host": "http://api.termodaq.com.ve",
+  "host": "localhost",
   "port": 3000,
   "remoting": {
     "context": false,
