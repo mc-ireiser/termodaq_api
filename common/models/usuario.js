@@ -12,6 +12,7 @@ module.exports = function(Usuario) {
       to: userInstance.email,
       from: process.env.EMAIL_FROM,
       subject: 'Gracias por registrarte.',
+      host: process.env.API_HOST,
       template: path.resolve(__dirname, '../templates/email-verify.ejs'),
       redirect: process.env.FRONT_VERIFIED,
       user: Usuario,
