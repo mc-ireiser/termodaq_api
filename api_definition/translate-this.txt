@@ -1,0 +1,131 @@
+"Create a new instance of the model and persist it into the data source."
+Cree una nueva instancia del modelo y guárdela en el origen de datos.
+
+"Patch an existing model instance or insert a new one into the data source."
+Parche una instancia de modelo existente o inserte una nueva en el origen de datos.
+
+"Replace an existing model instance or insert a new one into the data source."
+Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.
+
+"Find all instances of the model matched by filter from the data source."
+Encuentre todas las instancias del modelo que coincidan con el filtro del origen de datos.
+
+"Update an existing model instance or insert a new one into the data source based on the where criteria."
+Actualice una instancia de modelo existente o inserte una nueva en el origen de datos según los criterios (Where).
+
+"Check whether a model instance exists in the data source."
+Compruebe si existe una instancia de modelo en el origen de datos.
+
+"Find a model instance by {{id}} from the data source."
+Encuentre una instancia de modelo por el {{id}} del origen de datos.
+
+"Replace attributes for a model instance and persist it into the data source."
+Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.
+
+"Delete a model instance by {{id}} from the data source."
+Elimine una instancia de modelo mediante el {{id}} del origen de datos.
+
+"Patch attributes for a model instance and persist it into the data source."
+Parche los atributos para una instancia modelo y manténgalo en el origen de datos.
+
+"Find first instance of the model matched by filter from the data source."
+Encuentre la primera instancia del modelo que coincida con el filtro del origen de datos.
+
+"Update instances of the model matched by {{where}} from the data source."
+Actualice las instancias del modelo que coincidan con la fuente de datos (Where).
+
+"Count instances of the model matched by where from the data source."
+Cuente las instancias del modelo que coincidan con la fuente de datos (Where).
+
+"Create a change stream."
+Crear una secuencia de cambios.
+
+"Login a user with username/email and password."
+Inicie sesión un usuario con username/email y contraseña.
+
+"Logout a user with access token."
+Cierre la sesión de un usuario con token de acceso.
+
+"Trigger user's identity verification with configured verifyOptions"
+Activar la verificación de identidad del usuario con las opciones de verificación configuradas.
+
+"Confirm a user registration with identity verification token."
+Confirmar un registro de usuario con el token de verificación de identidad.
+
+"Reset password for a user with email."
+Restablecer contraseña para un usuario con correo electrónico.
+
+"Change a user's password."
+Cambiar la contraseña de un usuario.
+
+"Reset user's password via a password-reset token."
+Restablecer la contraseña del usuario a través de un token de restablecimiento de contraseña.
+
+"Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{"where":{"something":"value"}}`)."
+Filtros que definen los campos: `where`,` include`, `order`,` offset` y `limit` - debe ser una cadena codificada en JSON (`{" where ": {" field ":" value "}}`).
+
+""
+Capta la relación hasOne fichas
+
+""
+Crea una nueva instancia en fichas de este modelo
+
+""
+Actualizar fichas de este modelo
+
+""
+Suprime fichas de este modelo
+
+""
+Buscar un elemento relacionado por id para accessTokens
+
+""
+Suprimir un elemento relacionado por id para accessTokens
+
+""
+Actualizar un elemento relacionado por id para accessTokens
+
+""
+Capta la relación hasOne perfiles
+
+""
+Crea una nueva instancia en perfiles de este modelo
+
+""
+Actualizar perfiles de este modelo
+
+""
+Suprime perfiles de este modelo
+
+""
+Buscar un elemento relacionado por id para muestreos
+
+""
+Suprimir un elemento relacionado por id para muestreos
+
+""
+Actualizar un elemento relacionado por id para muestreos
+
+""
+accessTokens consultas de usuario
+
+""
+Crea una nueva instancia en accessTokens de este modelo
+
+""
+Suprime todos los accessTokens de este modelo
+
+""
+Recuentos accessTokens de usuario
+
+""
+muestreos consultas de usuario
+
+""
+Crea una nueva instancia en muestreos de este modelo
+
+""
+Suprime todos los muestreos de este modelo
+
+""
+Recuentos muestreos de usuario
