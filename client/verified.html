@@ -1,44 +1,93 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Language" content="en" />
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="theme-color" content="#4188c9">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>termoDaQ</title>
 
-    <script src="./assets/js/require.min.js"></script>
-    <script>
-      requirejs.config({
-          baseUrl: '.'
-      });
-    </script>
-    <!-- Dashboard Core -->
-    <link href="./assets/css/dashboard.css" rel="stylesheet" />
-    <script src="./assets/js/dashboard.js"></script>
-  </head>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        text-align: left;
+        background-color: #f5f7fb;
+      }
 
-  <body class="">
-    <div class="page">
-      <div class="page-content">
-        <div class="container text-center">
-          <div class="display-1 text-muted mb-5"><i class="si si-exclamation"></i>La operación se ha completado</div>
-          <h1 class="h2 mb-7">Su cuenta ha sido verificada de manera exitosa.</h1>
-          <a class="btn btn-primary" href="/">
-            Ir a iniciar sesión
-            <i class="fe fe-arrow-right mr-2"></i>
-          </a>
-        </div>
+      .container {
+        width: 100%;
+        height: 90vh;
+        padding: 0.75rem;
+        margin: 0 auto;
+        display: table;
+      }
+
+      @media (min-width: 576px) {
+        .container {
+          max-width: 540px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          max-width: 720px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .container {
+          max-width: 1200px;
+        }
+      }
+
+      .display-1 {
+        font-size: 4.5rem;
+        font-weight: 300;
+        line-height: 1.1;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: 0.66em;
+      }
+
+      h2, .h2 {
+        font-size: 1.75rem;
+      }
+
+      .center {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container text-center align-middle">
+      <div class="center">
+        <p class="display-1 text-muted mb-5">La operación se ha completado</p>
+        <h1 class="h2 mb-4">Su cuenta ha sido verificada de manera exitosa.</h1>
+        <a class="btn btn-primary" href="/">
+          Iniciar Sesión
+        </a>
       </div>
     </div>
-  </body>
 
+  </body>
 </html>
