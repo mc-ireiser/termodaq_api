@@ -52,10 +52,6 @@
       "type": "hasOne",
       "model": "ficha",
       "foreignKey": "userId"
-    },
-    "usuario": {
-      "type": "belongsTo",
-      "model": "usuario"
     }
   },
   "acls": [

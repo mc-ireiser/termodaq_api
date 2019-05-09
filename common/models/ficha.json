@@ -25,12 +25,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "muestreo": {
-      "type": "belongsTo",
-      "model": "muestreo"
-    }
-  },
+  "relations": {},
   "acls": [
     {
       "accessType": "*",

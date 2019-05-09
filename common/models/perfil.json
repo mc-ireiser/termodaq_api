@@ -29,12 +29,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "usuario": {
-      "type": "belongsTo",
-      "model": "usuario"
-    }
-  },
+  "relations": {},
   "acls": [
     {
       "accessType": "*",
