@@ -1,0 +1,2334 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: termodaq_api
+host: api.termodaq.com.ve
+basePath: /api
+paths:
+  /perfiles:
+    post:
+      tags:
+        - perfil
+      summary: Cree una nueva instancia del modelo y guárdela en el origen de datos.
+      operationId: perfil.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+    patch:
+      tags:
+        - perfil
+      summary: Parche una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: perfil.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+    put:
+      tags:
+        - perfil
+      summary: Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: perfil.replaceOrCreate__put_perfiles
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+    get:
+      tags:
+        - perfil
+      summary: Encuentre todas las instancias del modelo que coincidan con el filtro del origen de datos.
+      operationId: perfil.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{"where":{"something":"value"}}`).'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/perfil'
+      deprecated: false
+  /perfiles/replaceOrCreate:
+    post:
+      tags:
+        - perfil
+      summary: Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: perfil.replaceOrCreate__post_perfiles_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+  /perfiles/upsertWithWhere:
+    post:
+      tags:
+        - perfil
+      summary: Actualice una instancia de modelo existente o inserte una nueva en el origen de datos según los criterios (Where).
+      operationId: perfil.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+  '/perfiles/{id}/exists':
+    get:
+      tags:
+        - perfil
+      summary: Compruebe si existe una instancia de modelo en el origen de datos.
+      operationId: 'perfil.exists__get_perfiles_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/perfiles/{id}':
+    head:
+      tags:
+        - perfil
+      summary: Compruebe si existe una instancia de modelo en el origen de datos.
+      operationId: 'perfil.exists__head_perfiles_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - perfil
+      summary: 'Encuentre una instancia de modelo por el {{id}} del origen de datos.'
+      operationId: perfil.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: 'Filter defining fields and include - must be a JSON-encoded string ({"something":"value"})'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+    put:
+      tags:
+        - perfil
+      summary: Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.
+      operationId: 'perfil.replaceById__put_perfiles_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+    delete:
+      tags:
+        - perfil
+      summary: 'Elimine una instancia de modelo mediante el {{id}} del origen de datos.'
+      operationId: perfil.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - perfil
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: perfil.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: perfil id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+  '/perfiles/{id}/replace':
+    post:
+      tags:
+        - perfil
+      summary: Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.
+      operationId: 'perfil.replaceById__post_perfiles_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+  /perfiles/findOne:
+    get:
+      tags:
+        - perfil
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: perfil.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{"where":{"something":"value"}}`).'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+  /perfiles/update:
+    post:
+      tags:
+        - perfil
+      summary: Actualice las instancias del modelo que coincidan con la fuente de datos (Where).
+      operationId: perfil.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /perfiles/count:
+    get:
+      tags:
+        - perfil
+      summary: Cuente las instancias del modelo que coincidan con la fuente de datos (Where).
+      operationId: perfil.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /perfiles/change-stream:
+    post:
+      tags:
+        - perfil
+      summary: Crear una secuencia de cambios.
+      operationId: perfil.createChangeStream__post_perfiles_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - perfil
+      summary: Crear una secuencia de cambios.
+      operationId: perfil.createChangeStream__get_perfiles_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  '/muestreos/{id}/fichas':
+    get:
+      tags:
+        - muestreo
+      summary: Capta la relación hasOne fichas.
+      operationId: muestreo.prototype.__get__fichas
+      parameters:
+        - name: id
+          in: path
+          description: muestreo id
+          required: true
+          type: string
+          format: JSON
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+    post:
+      tags:
+        - muestreo
+      summary: Crea una nueva instancia en fichas de este modelo.
+      operationId: muestreo.prototype.__create__fichas
+      parameters:
+        - name: id
+          in: path
+          description: muestreo id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+    put:
+      tags:
+        - muestreo
+      summary: Actualizar fichas de este modelo.
+      operationId: muestreo.prototype.__update__fichas
+      parameters:
+        - name: id
+          in: path
+          description: muestreo id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+    delete:
+      tags:
+        - muestreo
+      summary: Suprime fichas de este modelo.
+      operationId: muestreo.prototype.__destroy__fichas
+      parameters:
+        - name: id
+          in: path
+          description: muestreo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /muestreos:
+    post:
+      tags:
+        - muestreo
+      summary: Cree una nueva instancia del modelo y guárdela en el origen de datos.
+      operationId: muestreo.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+    patch:
+      tags:
+        - muestreo
+      summary: Parche una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: muestreo.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+    put:
+      tags:
+        - muestreo
+      summary: Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: muestreo.replaceOrCreate__put_muestreos
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+    get:
+      tags:
+        - muestreo
+      summary: Encuentre todas las instancias del modelo que coincidan con el filtro del origen de datos.
+      operationId: muestreo.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{"where":{"something":"value"}}`).'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/muestreo'
+      deprecated: false
+  /muestreos/replaceOrCreate:
+    post:
+      tags:
+        - muestreo
+      summary: Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: muestreo.replaceOrCreate__post_muestreos_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+  /muestreos/upsertWithWhere:
+    post:
+      tags:
+        - muestreo
+      summary: Actualice una instancia de modelo existente o inserte una nueva en el origen de datos según los criterios (Where).
+      operationId: muestreo.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+  '/muestreos/{id}/exists':
+    get:
+      tags:
+        - muestreo
+      summary: Compruebe si existe una instancia de modelo en el origen de datos.
+      operationId: 'muestreo.exists__get_muestreos_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/muestreos/{id}':
+    head:
+      tags:
+        - muestreo
+      summary: Compruebe si existe una instancia de modelo en el origen de datos.
+      operationId: 'muestreo.exists__head_muestreos_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - muestreo
+      summary: 'Encuentre una instancia de modelo por el {{id}} del origen de datos.'
+      operationId: muestreo.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: 'Filter defining fields and include - must be a JSON-encoded string ({"something":"value"})'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+    put:
+      tags:
+        - muestreo
+      summary: Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.
+      operationId: 'muestreo.replaceById__put_muestreos_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+    delete:
+      tags:
+        - muestreo
+      summary: 'Elimine una instancia de modelo mediante el {{id}} del origen de datos.'
+      operationId: muestreo.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - muestreo
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: muestreo.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: muestreo id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+  '/muestreos/{id}/replace':
+    post:
+      tags:
+        - muestreo
+      summary: Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.
+      operationId: 'muestreo.replaceById__post_muestreos_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+  /muestreos/findOne:
+    get:
+      tags:
+        - muestreo
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: muestreo.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{"where":{"something":"value"}}`).'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+  /muestreos/update:
+    post:
+      tags:
+        - muestreo
+      summary: Actualice las instancias del modelo que coincidan con la fuente de datos (Where).
+      operationId: muestreo.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /muestreos/count:
+    get:
+      tags:
+        - muestreo
+      summary: Cuente las instancias del modelo que coincidan con la fuente de datos (Where).
+      operationId: muestreo.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /muestreos/change-stream:
+    post:
+      tags:
+        - muestreo
+      summary: Crear una secuencia de cambios.
+      operationId: muestreo.createChangeStream__post_muestreos_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - muestreo
+      summary: Crear una secuencia de cambios.
+      operationId: muestreo.createChangeStream__get_muestreos_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  '/usuarios/{id}/accessTokens/{fk}':
+    get:
+      tags:
+        - usuario
+      summary: Buscar un elemento relacionado por id para accessTokens.
+      operationId: usuario.prototype.__findById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - usuario
+      summary: Suprimir un elemento relacionado por id para accessTokens.
+      operationId: usuario.prototype.__destroyById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - usuario
+      summary: Actualizar un elemento relacionado por id para accessTokens.
+      operationId: usuario.prototype.__updateById__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+  '/usuarios/{id}/perfiles':
+    get:
+      tags:
+        - usuario
+      summary: Capta la relación hasOne perfiles.
+      operationId: usuario.prototype.__get__perfiles
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+    post:
+      tags:
+        - usuario
+      summary: Crea una nueva instancia en perfiles de este modelo.
+      operationId: usuario.prototype.__create__perfiles
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+    put:
+      tags:
+        - usuario
+      summary: Actualizar perfiles de este modelo.
+      operationId: usuario.prototype.__update__perfiles
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/perfil'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/perfil'
+      deprecated: false
+    delete:
+      tags:
+        - usuario
+      summary: Suprime perfiles de este modelo.
+      operationId: usuario.prototype.__destroy__perfiles
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/usuarios/{id}/muestreos/{fk}':
+    get:
+      tags:
+        - usuario
+      summary: Buscar un elemento relacionado por id para muestreos.
+      operationId: usuario.prototype.__findById__muestreos
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para muestreos
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+    delete:
+      tags:
+        - usuario
+      summary: Suprimir un elemento relacionado por id para muestreos.
+      operationId: usuario.prototype.__destroyById__muestreos
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para muestreos
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - usuario
+      summary: Actualizar un elemento relacionado por id para muestreos.
+      operationId: usuario.prototype.__updateById__muestreos
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: fk
+          in: path
+          description: Clave foránea para muestreos
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+  '/usuarios/{id}/accessTokens':
+    get:
+      tags:
+        - usuario
+      summary: accessTokens consultas de usuario.
+      operationId: usuario.prototype.__get__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+      deprecated: false
+    post:
+      tags:
+        - usuario
+      summary: Crea una nueva instancia en accessTokens de este modelo.
+      operationId: usuario.prototype.__create__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - usuario
+      summary: Suprime todos los accessTokens de este modelo.
+      operationId: usuario.prototype.__delete__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/usuarios/{id}/accessTokens/count':
+    get:
+      tags:
+        - usuario
+      summary: Recuentos accessTokens de usuario.
+      operationId: usuario.prototype.__count__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/usuarios/{id}/muestreos':
+    get:
+      tags:
+        - usuario
+      summary: muestreos consultas de usuario.
+      operationId: usuario.prototype.__get__muestreos
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/muestreo'
+      deprecated: false
+    post:
+      tags:
+        - usuario
+      summary: Crea una nueva instancia en muestreos de este modelo.
+      operationId: usuario.prototype.__create__muestreos
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/muestreo'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/muestreo'
+      deprecated: false
+    delete:
+      tags:
+        - usuario
+      summary: Suprime todos los muestreos de este modelo.
+      operationId: usuario.prototype.__delete__muestreos
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/usuarios/{id}/muestreos/count':
+    get:
+      tags:
+        - usuario
+      summary: Recuentos muestreos de usuario.
+      operationId: usuario.prototype.__count__muestreos
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /usuarios:
+    post:
+      tags:
+        - usuario
+      summary: Cree una nueva instancia del modelo y guárdela en el origen de datos.
+      operationId: usuario.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/usuario'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+    patch:
+      tags:
+        - usuario
+      summary: Parche una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: usuario.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/usuario'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+    put:
+      tags:
+        - usuario
+      summary: Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: usuario.replaceOrCreate__put_usuarios
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/usuario'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+    get:
+      tags:
+        - usuario
+      summary: Encuentre todas las instancias del modelo que coincidan con el filtro del origen de datos.
+      operationId: usuario.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{"where":{"something":"value"}}`).'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/usuario'
+      deprecated: false
+  /usuarios/replaceOrCreate:
+    post:
+      tags:
+        - usuario
+      summary: Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: usuario.replaceOrCreate__post_usuarios_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/usuario'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+  /usuarios/upsertWithWhere:
+    post:
+      tags:
+        - usuario
+      summary: Actualice una instancia de modelo existente o inserte una nueva en el origen de datos según los criterios (Where).
+      operationId: usuario.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/usuario'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+  '/usuarios/{id}/exists':
+    get:
+      tags:
+        - usuario
+      summary: Compruebe si existe una instancia de modelo en el origen de datos.
+      operationId: 'usuario.exists__get_usuarios_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/usuarios/{id}':
+    head:
+      tags:
+        - usuario
+      summary: Compruebe si existe una instancia de modelo en el origen de datos.
+      operationId: 'usuario.exists__head_usuarios_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - usuario
+      summary: 'Encuentre una instancia de modelo por el {{id}} del origen de datos.'
+      operationId: usuario.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: 'Filter defining fields and include - must be a JSON-encoded string ({"something":"value"})'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+    put:
+      tags:
+        - usuario
+      summary: Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.
+      operationId: 'usuario.replaceById__put_usuarios_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/usuario'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+    delete:
+      tags:
+        - usuario
+      summary: 'Elimine una instancia de modelo mediante el {{id}} del origen de datos.'
+      operationId: usuario.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - usuario
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: usuario.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/usuario'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+  '/usuarios/{id}/replace':
+    post:
+      tags:
+        - usuario
+      summary: Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.
+      operationId: 'usuario.replaceById__post_usuarios_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/usuario'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+  /usuarios/findOne:
+    get:
+      tags:
+        - usuario
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: usuario.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{"where":{"something":"value"}}`).'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/usuario'
+      deprecated: false
+  /usuarios/update:
+    post:
+      tags:
+        - usuario
+      summary: Actualice las instancias del modelo que coincidan con la fuente de datos (Where).
+      operationId: usuario.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/usuario'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /usuarios/count:
+    get:
+      tags:
+        - usuario
+      summary: Cuente las instancias del modelo que coincidan con la fuente de datos (Where).
+      operationId: usuario.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /usuarios/change-stream:
+    post:
+      tags:
+        - usuario
+      summary: Crear una secuencia de cambios.
+      operationId: usuario.createChangeStream__post_usuarios_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - usuario
+      summary: Crear una secuencia de cambios.
+      operationId: usuario.createChangeStream__get_usuarios_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /usuarios/login:
+    post:
+      tags:
+        - usuario
+      summary: Inicie sesión un usuario con username/email y contraseña.
+      operationId: usuario.login
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            type: object
+        - name: include
+          in: query
+          description: Related objects to include in the response. See the description of return value for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: |+
+              El cuerpo de respuesta contiene propiedades de la AccessToken creada durante el inicio de la sesión.
+              Dependiendo del valor del parámetro `include`, el cuerpo puede contener propiedades adicionales:
+
+                - `user` - `U+007BUserU+007D` - Datos del usuario conectado actualmente. (`include=user`)
+
+            type: object
+      deprecated: false
+  /usuarios/logout:
+    post:
+      tags:
+        - usuario
+      summary: Cierre la sesión de un usuario con token de acceso.
+      operationId: usuario.logout
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/usuarios/{id}/verify':
+    post:
+      tags:
+        - usuario
+      summary: Activar la verificación de identidad del usuario con las opciones de verificación configuradas.
+      operationId: usuario.prototype.verify
+      parameters:
+        - name: id
+          in: path
+          description: usuario id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /usuarios/confirm:
+    get:
+      tags:
+        - usuario
+      summary: Confirmar un registro de usuario con el token de verificación de identidad.
+      operationId: usuario.confirm
+      parameters:
+        - name: uid
+          in: query
+          required: true
+          type: string
+        - name: token
+          in: query
+          required: true
+          type: string
+        - name: redirect
+          in: query
+          required: false
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /usuarios/reset:
+    post:
+      tags:
+        - usuario
+      summary: Restablecer contraseña para un usuario con correo electrónico.
+      operationId: usuario.resetPassword
+      parameters:
+        - name: options
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /usuarios/change-password:
+    post:
+      tags:
+        - usuario
+      summary: Cambiar la contraseña de un usuario.
+      operationId: usuario.changePassword
+      parameters:
+        - name: oldPassword
+          in: formData
+          required: true
+          type: string
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /usuarios/reset-password:
+    post:
+      tags:
+        - usuario
+      summary: Restablecer la contraseña del usuario a través de un token de restablecimiento de contraseña.
+      operationId: usuario.setPassword
+      parameters:
+        - name: newPassword
+          in: formData
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /fichas:
+    post:
+      tags:
+        - ficha
+      summary: Cree una nueva instancia del modelo y guárdela en el origen de datos.
+      operationId: ficha.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+    patch:
+      tags:
+        - ficha
+      summary: Parche una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: ficha.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+    put:
+      tags:
+        - ficha
+      summary: Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: ficha.replaceOrCreate__put_fichas
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+    get:
+      tags:
+        - ficha
+      summary: Encuentre todas las instancias del modelo que coincidan con el filtro del origen de datos.
+      operationId: ficha.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{"where":{"something":"value"}}`).'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ficha'
+      deprecated: false
+  /fichas/replaceOrCreate:
+    post:
+      tags:
+        - ficha
+      summary: Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.
+      operationId: ficha.replaceOrCreate__post_fichas_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+  /fichas/upsertWithWhere:
+    post:
+      tags:
+        - ficha
+      summary: Actualice una instancia de modelo existente o inserte una nueva en el origen de datos según los criterios (Where).
+      operationId: ficha.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+  '/fichas/{id}/exists':
+    get:
+      tags:
+        - ficha
+      summary: Compruebe si existe una instancia de modelo en el origen de datos.
+      operationId: 'ficha.exists__get_fichas_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/fichas/{id}':
+    head:
+      tags:
+        - ficha
+      summary: Compruebe si existe una instancia de modelo en el origen de datos.
+      operationId: 'ficha.exists__head_fichas_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - ficha
+      summary: 'Encuentre una instancia de modelo por el {{id}} del origen de datos.'
+      operationId: ficha.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: 'Filter defining fields and include - must be a JSON-encoded string ({"something":"value"})'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+    put:
+      tags:
+        - ficha
+      summary: Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.
+      operationId: 'ficha.replaceById__put_fichas_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+    delete:
+      tags:
+        - ficha
+      summary: 'Elimine una instancia de modelo mediante el {{id}} del origen de datos.'
+      operationId: ficha.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - ficha
+      summary: Patch attributes for a model instance and persist it into the data source.
+      operationId: ficha.prototype.patchAttributes
+      parameters:
+        - name: id
+          in: path
+          description: ficha id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+  '/fichas/{id}/replace':
+    post:
+      tags:
+        - ficha
+      summary: Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.
+      operationId: 'ficha.replaceById__post_fichas_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+  /fichas/findOne:
+    get:
+      tags:
+        - ficha
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: ficha.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{"where":{"something":"value"}}`).  See https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries for more details.'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ficha'
+      deprecated: false
+  /fichas/update:
+    post:
+      tags:
+        - ficha
+      summary: Actualice las instancias del modelo que coincidan con la fuente de datos (Where).
+      operationId: ficha.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/ficha'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /fichas/count:
+    get:
+      tags:
+        - ficha
+      summary: Cuente las instancias del modelo que coincidan con la fuente de datos (Where).
+      operationId: ficha.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /fichas/change-stream:
+    post:
+      tags:
+        - ficha
+      summary: Crear una secuencia de cambios.
+      operationId: ficha.createChangeStream__post_fichas_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - ficha
+      summary: Crear una secuencia de cambios.
+      operationId: ficha.createChangeStream__get_fichas_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+tags:
+  - name: perfil
+  - name: muestreo
+  - name: usuario
+  - name: ficha
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+  - application/xml
+  - text/xml
+produces:
+  - application/json
+  - application/xml
+  - text/xml
+  - application/javascript
+  - text/javascript
+definitions:
+  perfil:
+    properties:
+      nombre:
+        type: string
+      apellido:
+        type: string
+      bio:
+        type: string
+      telefono:
+        type: string
+      institucion:
+        type: string
+      pais:
+        type: string
+      id:
+        $ref: '#/definitions/ObjectID'
+      userId:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - nombre
+      - apellido
+    additionalProperties: false
+  ficha:
+    properties:
+      titulo:
+        type: string
+      lugar:
+        type: string
+      descripcion:
+        type: string
+      investigadores:
+        type: array
+        items:
+          type: object
+      id:
+        $ref: '#/definitions/ObjectID'
+      userId:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - titulo
+      - lugar
+    additionalProperties: false
+  muestreo:
+    properties:
+      rawline:
+        type: string
+      rawfields:
+        type: string
+      latitud:
+        type: number
+        format: double
+      longitud:
+        type: number
+        format: double
+      fecha:
+        type: string
+        format: date-time
+      hora:
+        type: string
+      fecha_hora:
+        type: string
+      temperatura_interna:
+        type: number
+        format: double
+      temperatura_aire:
+        type: number
+        format: double
+      temperatura_agua:
+        type: number
+        format: double
+      presion:
+        type: number
+        format: double
+      sensor_adicional:
+        type: number
+        format: double
+      id:
+        $ref: '#/definitions/ObjectID'
+      userId:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - rawline
+      - rawfields
+    additionalProperties: false
+  AccessToken:
+    properties:
+      id:
+        type: string
+      ttl:
+        default: 1209600
+        description: time to live in seconds (2 weeks by default)
+        type: number
+        format: double
+      scopes:
+        description: Array of scopes granted to this access token.
+        type: array
+        items:
+          type: string
+      created:
+        type: string
+        format: date-time
+      userId:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - id
+    additionalProperties: false
+  usuario:
+    properties:
+      username:
+        type: string
+      email:
+        type: string
+      realm:
+        type: string
+      emailVerified:
+        type: boolean
+      id:
+        $ref: '#/definitions/ObjectID'
+    required:
+      - username
+      - email
+    additionalProperties: false
+  ObjectID:
+    type: string
+    pattern: '^[a-fA-F\d]{24}$'
