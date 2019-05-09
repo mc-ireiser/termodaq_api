@@ -25,11 +25,36 @@ module.exports = function(Usuario) {
       if (err) return next(err);
 
       console.log('> verification email sent:');
-
-      console.log('token: ', response.token);
-      console.log('  uid: ', response.uid);
-
       context.res.send(userInstance);
+    });
+  });
+
+  Usuario.on('resetPasswordRequest', function(info) {
+    console.log('> Usuario.resetPasswordRequest triggered');
+
+    let portNumber;
+    let protocol = process.env.EMAIL_LOCAL_SERVER_PROTOCOL;
+    let portELS = process.env.EMAIL_LOCAL_SERVER_PORT;
+
+    if (protocol == 'http' && portELS == 443) {
+      portNumber = '';
+    } else {
+      portNumber = ':' + process.env.EMAIL_LOCAL_SERVER_PORT;
+    }
+
+    Usuario.app.models.Email.send({
+      type: 'email',
+      to: info.email,
+      from: process.env.EMAIL_FROM,
+      subject: 'Reinicio de password.',
+      // template: path.resolve(__dirname, '../templates/email-verify.ejs'),
+      // html: path.resolve(__dirname, '../templates/email-verify.ejs'),
+      text: protocol + '://' + process.env.API_HOST + portNumber +
+      '/reset-your-password.html?access_token=' + info.accessToken.id,
+    }, function(err) {
+      if (err) return console.log('> error sending password reset email');
+
+      console.log('> sending password reset email to:', info.email);
     });
   });
 };
