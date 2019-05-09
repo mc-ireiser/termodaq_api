@@ -4,10 +4,6 @@
   },
   "initial": {
     "compression": {},
-    "loopback-i18n#i18n": {
-      "directory": "common/i18n",
-	    "locales": ["es"]
-    },
     "cors": {
       "params": {
         "origin": true,

@@ -3,7 +3,7 @@
 var path = require('path');
 
 module.exports = function(Usuario) {
-  //send verification email after registration
+  // send verification email after registration
   Usuario.afterRemote('create', function(context, userInstance, next) {
     console.log('> Usuario.afterRemote triggered');
 
@@ -14,7 +14,7 @@ module.exports = function(Usuario) {
       subject: 'Gracias por registrarte.',
       template: path.resolve(__dirname, '../templates/email-verify.ejs'),
       redirect: process.env.FRONT_VERIFIED,
-      user: Usuario
+      user: Usuario,
     };
 
     userInstance.verify(options, function(err, response, next) {
@@ -25,9 +25,5 @@ module.exports = function(Usuario) {
 
       context.res.send(userInstance);
     });
-
   });
 };
-
-
-
