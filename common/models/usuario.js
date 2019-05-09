@@ -16,6 +16,7 @@ module.exports = function(Usuario) {
       host: process.env.API_HOST,
       port: process.env.EMAIL_LOCAL_SERVER_PORT,
       template: path.resolve(__dirname, '../templates/email-verify.ejs'),
+      html: path.resolve(__dirname, '../templates/email-verify.ejs'),
       redirect: process.env.FRONT_VERIFIED,
       user: Usuario,
     };
@@ -24,7 +25,9 @@ module.exports = function(Usuario) {
       if (err) return next(err);
 
       console.log('> verification email sent:');
-      console.log(response);
+
+      console.log('token: ', response.token);
+      console.log('  uid: ', response.uid);
 
       context.res.send(userInstance);
     });

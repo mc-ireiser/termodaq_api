@@ -33,7 +33,7 @@
     "public": false
   },
   "Email": {
-    "dataSource": "email"
+    "dataSource": "sendgrid"
   },
   "User": {
     "dataSource": "db_mongo",

@@ -15,6 +15,11 @@ module.exports = {
     password: process.env.DB_PASS || ''
   },
 
+  sendgrid: {
+    connector: 'loopback-connector-sendgrid',
+    api_key: process.env.SENDGRID_KEY
+  },
+
   email: {
     name: 'email',
     connector: 'mail',
