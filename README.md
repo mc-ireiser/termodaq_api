@@ -126,8 +126,6 @@ pattern: ^[a-fA-F\d]{24}$
   descripcion: string,
   investigadores: [...],
   id: ObjectIDstring,
-  pattern: ^[a-fA-F\d]{24}$,
-  userId: ObjectIDstring,
-  pattern: ^[a-fA-F\d]{24}$
+  userId: ObjectIDstring
 }
 ```
