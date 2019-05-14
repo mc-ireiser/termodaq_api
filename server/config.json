@@ -11,28 +11,13 @@
     },
     "json": {
       "strict": false,
-      "limit": "10mb",
+      "limit": "5mb",
       "parameterLimit": 1000000
     },
     "urlencoded": {
       "extended": true,
-      "limit": "10mb",
+      "limit": "5mb",
       "parameterLimit": 1000000
-    },
-    "parse": {
-      "body-parser#json": {
-        "params": {
-          "limit": "10mb",
-          "parameterLimit": 1000000
-        }
-      },
-      "body-parser#urlencoded": {
-        "params": {
-          "limit": "10mb",
-          "extended": true,
-          "parameterLimit": 1000000
-        }
-      }
     },
     "cors": false
   }
