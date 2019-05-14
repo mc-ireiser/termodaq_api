@@ -2,5 +2,9 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "db_mongo": {
+    "name": "db_mongo",
+    "connector": "mongodb"
   }
 }

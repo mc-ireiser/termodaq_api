@@ -39,20 +39,20 @@
     "dataSource": "db_mongo",
     "public": false
   },
-  "perfil": {
-    "dataSource": "db_mongo",
-    "public": true
-  },
-  "muestreo": {
-    "dataSource": "db_mongo",
-    "public": true
-  },
   "usuario": {
     "dataSource": "db_mongo",
     "public": true,
     "options": {
       "emailVerificationRequired": true
     }
+  },
+  "perfil": {
+    "dataSource": "db_mongo",
+    "public": true
+  },
+  "estudio": {
+    "dataSource": "db_mongo",
+    "public": true
   },
   "ficha": {
     "dataSource": "db_mongo",

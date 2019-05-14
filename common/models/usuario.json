@@ -31,9 +31,9 @@
       "model": "perfil",
       "foreignKey": "userId"
     },
-    "muestreos": {
+    "estudios": {
       "type": "hasMany",
-      "model": "muestreo",
+      "model": "estudio",
       "foreignKey": "userId"
     }
   },

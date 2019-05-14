@@ -1,49 +1,17 @@
 {
-  "name": "muestreo",
-  "plural": "muestreos",
+  "name": "estudio",
+  "plural": "estudios",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "rawline": {
-      "type": "string",
+    "data": {
+      "type": [
+        "object"
+      ],
       "required": true
-    },
-    "rawfields": {
-      "type": "string",
-      "required": true
-    },
-    "latitud": {
-      "type": "number"
-    },
-    "longitud": {
-      "type": "number"
-    },
-    "fecha": {
-      "type": "date"
-    },
-    "hora": {
-      "type": "string"
-    },
-    "fecha_hora": {
-      "type": "string"
-    },
-    "temperatura_interna": {
-      "type": "number"
-    },
-    "temperatura_aire": {
-      "type": "number"
-    },
-    "temperatura_agua": {
-      "type": "number"
-    },
-    "presion": {
-      "type": "number"
-    },
-    "sensor_adicional": {
-      "type": "number"
     }
   },
   "validations": [],
@@ -51,6 +19,11 @@
     "fichas": {
       "type": "hasOne",
       "model": "ficha",
+      "foreignKey": "userId"
+    },
+    "muestreos": {
+      "type": "hasMany",
+      "model": "muestreo",
       "foreignKey": "userId"
     }
   },
