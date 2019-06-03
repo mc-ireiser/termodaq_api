@@ -4,1280 +4,12 @@
     "version": "1.0.0",
     "title": "termodaq_api"
   },
+  "schemes": [
+    "http"
+  ],
   "host": "api.termodaq.com.ve",
   "basePath": "/api",
   "paths": {
-    "/perfiles": {
-      "post": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Cree una nueva instancia del modelo y guárdela en el origen de datos.",
-        "operationId": "perfil.create",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "patch": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Parche una instancia de modelo existente o inserte una nueva en el origen de datos.",
-        "operationId": "perfil.patchOrCreate",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "put": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.",
-        "operationId": "perfil.replaceOrCreate__put_perfiles",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "get": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Encuentre todas las instancias del modelo que coincidan con el filtro del origen de datos.",
-        "operationId": "perfil.find",
-        "parameters": [
-          {
-            "name": "filter",
-            "in": "query",
-            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{\"where\":{\"something\":\"value\"}}`).",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/perfil"
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/perfiles/replaceOrCreate": {
-      "post": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.",
-        "operationId": "perfil.replaceOrCreate__post_perfiles_replaceOrCreate",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/perfiles/upsertWithWhere": {
-      "post": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Actualice una instancia de modelo existente o inserte una nueva en el origen de datos según los criterios (Where).",
-        "operationId": "perfil.upsertWithWhere",
-        "parameters": [
-          {
-            "name": "where",
-            "in": "query",
-            "description": "Criteria to match model instances",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "An object of model property name/value pairs",
-            "required": false,
-            "schema": {
-              "description": "An object of model property name/value pairs",
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/perfiles/{id}/exists": {
-      "get": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Compruebe si existe una instancia de modelo en el origen de datos.",
-        "operationId": "perfil.exists__get_perfiles_{id}_exists",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "exists": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/perfiles/{id}": {
-      "head": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Compruebe si existe una instancia de modelo en el origen de datos.",
-        "operationId": "perfil.exists__head_perfiles_{id}",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "exists": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "get": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Encuentre una instancia de modelo por el {{id}} del origen de datos.",
-        "operationId": "perfil.findById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "filter",
-            "in": "query",
-            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "put": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.",
-        "operationId": "perfil.replaceById__put_perfiles_{id}",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "delete": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Elimine una instancia de modelo mediante el {{id}} del origen de datos.",
-        "operationId": "perfil.deleteById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "object"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "patch": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Patch attributes for a model instance and persist it into the data source.",
-        "operationId": "perfil.prototype.patchAttributes",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "perfil id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "An object of model property name/value pairs",
-            "required": false,
-            "schema": {
-              "description": "An object of model property name/value pairs",
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/perfiles/{id}/replace": {
-      "post": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.",
-        "operationId": "perfil.replaceById__post_perfiles_{id}_replace",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/perfiles/findOne": {
-      "get": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Find first instance of the model matched by filter from the data source.",
-        "operationId": "perfil.findOne",
-        "parameters": [
-          {
-            "name": "filter",
-            "in": "query",
-            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{\"where\":{\"something\":\"value\"}}`).",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/perfiles/update": {
-      "post": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Actualice las instancias del modelo que coincidan con la fuente de datos (Where).",
-        "operationId": "perfil.updateAll",
-        "parameters": [
-          {
-            "name": "where",
-            "in": "query",
-            "description": "Criteria to match model instances",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "An object of model property name/value pairs",
-            "required": false,
-            "schema": {
-              "description": "An object of model property name/value pairs",
-              "$ref": "#/definitions/perfil"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "description": "Information related to the outcome of the operation",
-              "type": "object",
-              "properties": {
-                "count": {
-                  "description": "The number of instances updated",
-                  "type": "number",
-                  "format": "double"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/perfiles/count": {
-      "get": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Cuente las instancias del modelo que coincidan con la fuente de datos (Where).",
-        "operationId": "perfil.count",
-        "parameters": [
-          {
-            "name": "where",
-            "in": "query",
-            "description": "Criteria to match model instances",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "count": {
-                  "type": "number",
-                  "format": "double"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/perfiles/change-stream": {
-      "post": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Crear una secuencia de cambios.",
-        "operationId": "perfil.createChangeStream__post_perfiles_change-stream",
-        "parameters": [
-          {
-            "name": "options",
-            "in": "formData",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "file"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "get": {
-        "tags": [
-          "perfil"
-        ],
-        "summary": "Crear una secuencia de cambios.",
-        "operationId": "perfil.createChangeStream__get_perfiles_change-stream",
-        "parameters": [
-          {
-            "name": "options",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "file"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/{id}/fichas": {
-      "get": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Capta la relación hasOne fichas.",
-        "operationId": "muestreo.prototype.__get__fichas",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "muestreo id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "refresh",
-            "in": "query",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/ficha"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "post": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Crea una nueva instancia en fichas de este modelo.",
-        "operationId": "muestreo.prototype.__create__fichas",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "muestreo id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/ficha"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/ficha"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "put": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Actualizar fichas de este modelo.",
-        "operationId": "muestreo.prototype.__update__fichas",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "muestreo id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/ficha"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/ficha"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "delete": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Suprime fichas de este modelo.",
-        "operationId": "muestreo.prototype.__destroy__fichas",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "muestreo id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Request was successful"
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos": {
-      "post": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Cree una nueva instancia del modelo y guárdela en el origen de datos.",
-        "operationId": "muestreo.create",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "patch": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Parche una instancia de modelo existente o inserte una nueva en el origen de datos.",
-        "operationId": "muestreo.patchOrCreate",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "put": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.",
-        "operationId": "muestreo.replaceOrCreate__put_muestreos",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "get": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Encuentre todas las instancias del modelo que coincidan con el filtro del origen de datos.",
-        "operationId": "muestreo.find",
-        "parameters": [
-          {
-            "name": "filter",
-            "in": "query",
-            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{\"where\":{\"something\":\"value\"}}`).",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/muestreo"
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/replaceOrCreate": {
-      "post": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.",
-        "operationId": "muestreo.replaceOrCreate__post_muestreos_replaceOrCreate",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/upsertWithWhere": {
-      "post": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Actualice una instancia de modelo existente o inserte una nueva en el origen de datos según los criterios (Where).",
-        "operationId": "muestreo.upsertWithWhere",
-        "parameters": [
-          {
-            "name": "where",
-            "in": "query",
-            "description": "Criteria to match model instances",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "An object of model property name/value pairs",
-            "required": false,
-            "schema": {
-              "description": "An object of model property name/value pairs",
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/{id}/exists": {
-      "get": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Compruebe si existe una instancia de modelo en el origen de datos.",
-        "operationId": "muestreo.exists__get_muestreos_{id}_exists",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "exists": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/{id}": {
-      "head": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Compruebe si existe una instancia de modelo en el origen de datos.",
-        "operationId": "muestreo.exists__head_muestreos_{id}",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "exists": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "get": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Encuentre una instancia de modelo por el {{id}} del origen de datos.",
-        "operationId": "muestreo.findById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "filter",
-            "in": "query",
-            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "put": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.",
-        "operationId": "muestreo.replaceById__put_muestreos_{id}",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "delete": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Elimine una instancia de modelo mediante el {{id}} del origen de datos.",
-        "operationId": "muestreo.deleteById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "object"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "patch": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Patch attributes for a model instance and persist it into the data source.",
-        "operationId": "muestreo.prototype.patchAttributes",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "muestreo id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "An object of model property name/value pairs",
-            "required": false,
-            "schema": {
-              "description": "An object of model property name/value pairs",
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/{id}/replace": {
-      "post": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.",
-        "operationId": "muestreo.replaceById__post_muestreos_{id}_replace",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Model id",
-            "required": true,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "Model instance data",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/findOne": {
-      "get": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Find first instance of the model matched by filter from the data source.",
-        "operationId": "muestreo.findOne",
-        "parameters": [
-          {
-            "name": "filter",
-            "in": "query",
-            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{\"where\":{\"something\":\"value\"}}`).",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/update": {
-      "post": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Actualice las instancias del modelo que coincidan con la fuente de datos (Where).",
-        "operationId": "muestreo.updateAll",
-        "parameters": [
-          {
-            "name": "where",
-            "in": "query",
-            "description": "Criteria to match model instances",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          },
-          {
-            "name": "data",
-            "in": "body",
-            "description": "An object of model property name/value pairs",
-            "required": false,
-            "schema": {
-              "description": "An object of model property name/value pairs",
-              "$ref": "#/definitions/muestreo"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "description": "Information related to the outcome of the operation",
-              "type": "object",
-              "properties": {
-                "count": {
-                  "description": "The number of instances updated",
-                  "type": "number",
-                  "format": "double"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/count": {
-      "get": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Cuente las instancias del modelo que coincidan con la fuente de datos (Where).",
-        "operationId": "muestreo.count",
-        "parameters": [
-          {
-            "name": "where",
-            "in": "query",
-            "description": "Criteria to match model instances",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "count": {
-                  "type": "number",
-                  "format": "double"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/muestreos/change-stream": {
-      "post": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Crear una secuencia de cambios.",
-        "operationId": "muestreo.createChangeStream__post_muestreos_change-stream",
-        "parameters": [
-          {
-            "name": "options",
-            "in": "formData",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "file"
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "get": {
-        "tags": [
-          "muestreo"
-        ],
-        "summary": "Crear una secuencia de cambios.",
-        "operationId": "muestreo.createChangeStream__get_muestreos_change-stream",
-        "parameters": [
-          {
-            "name": "options",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "JSON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Request was successful",
-            "schema": {
-              "type": "file"
-            }
-          }
-        },
-        "deprecated": false
-      }
-    },
     "/usuarios/{id}/accessTokens/{fk}": {
       "get": {
         "tags": [
@@ -1512,13 +244,13 @@
         "deprecated": false
       }
     },
-    "/usuarios/{id}/muestreos/{fk}": {
+    "/usuarios/{id}/estudios/{fk}": {
       "get": {
         "tags": [
           "usuario"
         ],
-        "summary": "Buscar un elemento relacionado por id para muestreos.",
-        "operationId": "usuario.prototype.__findById__muestreos",
+        "summary": "Buscar un elemento relacionado por id para estudios.",
+        "operationId": "usuario.prototype.__findById__estudios",
         "parameters": [
           {
             "name": "id",
@@ -1531,7 +263,7 @@
           {
             "name": "fk",
             "in": "path",
-            "description": "Clave foránea para muestreos",
+            "description": "Clave foránea para estudios",
             "required": true,
             "type": "string",
             "format": "JSON"
@@ -1541,7 +273,7 @@
           "200": {
             "description": "Request was successful",
             "schema": {
-              "$ref": "#/definitions/muestreo"
+              "$ref": "#/definitions/estudio"
             }
           }
         },
@@ -1551,8 +283,8 @@
         "tags": [
           "usuario"
         ],
-        "summary": "Suprimir un elemento relacionado por id para muestreos.",
-        "operationId": "usuario.prototype.__destroyById__muestreos",
+        "summary": "Suprimir un elemento relacionado por id para estudios.",
+        "operationId": "usuario.prototype.__destroyById__estudios",
         "parameters": [
           {
             "name": "id",
@@ -1565,7 +297,7 @@
           {
             "name": "fk",
             "in": "path",
-            "description": "Clave foránea para muestreos",
+            "description": "Clave foránea para estudios",
             "required": true,
             "type": "string",
             "format": "JSON"
@@ -1582,8 +314,8 @@
         "tags": [
           "usuario"
         ],
-        "summary": "Actualizar un elemento relacionado por id para muestreos.",
-        "operationId": "usuario.prototype.__updateById__muestreos",
+        "summary": "Actualizar un elemento relacionado por id para estudios.",
+        "operationId": "usuario.prototype.__updateById__estudios",
         "parameters": [
           {
             "name": "id",
@@ -1596,7 +328,7 @@
           {
             "name": "fk",
             "in": "path",
-            "description": "Clave foránea para muestreos",
+            "description": "Clave foránea para estudios",
             "required": true,
             "type": "string",
             "format": "JSON"
@@ -1606,7 +338,7 @@
             "in": "body",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/muestreo"
+              "$ref": "#/definitions/estudio"
             }
           }
         ],
@@ -1614,7 +346,7 @@
           "200": {
             "description": "Request was successful",
             "schema": {
-              "$ref": "#/definitions/muestreo"
+              "$ref": "#/definitions/estudio"
             }
           }
         },
@@ -1758,13 +490,13 @@
         "deprecated": false
       }
     },
-    "/usuarios/{id}/muestreos": {
+    "/usuarios/{id}/estudios": {
       "get": {
         "tags": [
           "usuario"
         ],
-        "summary": "muestreos consultas de usuario.",
-        "operationId": "usuario.prototype.__get__muestreos",
+        "summary": "estudios consultas de usuario.",
+        "operationId": "usuario.prototype.__get__estudios",
         "parameters": [
           {
             "name": "id",
@@ -1788,7 +520,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/muestreo"
+                "$ref": "#/definitions/estudio"
               }
             }
           }
@@ -1799,8 +531,8 @@
         "tags": [
           "usuario"
         ],
-        "summary": "Crea una nueva instancia en muestreos de este modelo.",
-        "operationId": "usuario.prototype.__create__muestreos",
+        "summary": "Crea una nueva instancia en estudios de este modelo.",
+        "operationId": "usuario.prototype.__create__estudios",
         "parameters": [
           {
             "name": "id",
@@ -1815,7 +547,7 @@
             "in": "body",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/muestreo"
+              "$ref": "#/definitions/estudio"
             }
           }
         ],
@@ -1823,7 +555,7 @@
           "200": {
             "description": "Request was successful",
             "schema": {
-              "$ref": "#/definitions/muestreo"
+              "$ref": "#/definitions/estudio"
             }
           }
         },
@@ -1833,8 +565,8 @@
         "tags": [
           "usuario"
         ],
-        "summary": "Suprime todos los muestreos de este modelo.",
-        "operationId": "usuario.prototype.__delete__muestreos",
+        "summary": "Suprime todos los estudios de este modelo.",
+        "operationId": "usuario.prototype.__delete__estudios",
         "parameters": [
           {
             "name": "id",
@@ -1853,13 +585,13 @@
         "deprecated": false
       }
     },
-    "/usuarios/{id}/muestreos/count": {
+    "/usuarios/{id}/estudios/count": {
       "get": {
         "tags": [
           "usuario"
         ],
-        "summary": "Recuentos muestreos de usuario.",
-        "operationId": "usuario.prototype.__count__muestreos",
+        "summary": "Recuentos estudios de usuario.",
+        "operationId": "usuario.prototype.__count__estudios",
         "parameters": [
           {
             "name": "id",
@@ -1909,6 +641,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/usuario"
             }
           }
@@ -1936,6 +669,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/usuario"
             }
           }
@@ -1963,6 +697,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/usuario"
             }
           }
@@ -1987,7 +722,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{\"where\":{\"something\":\"value\"}}`).",
+            "description": "Filtros que definen los campos: `where`,` include`, `order`,` offset` y `limit` - debe ser una cadena codificada en JSON (`{\"where\":{\"something\":\"value\"}}`).",
             "required": false,
             "type": "string",
             "format": "JSON"
@@ -2021,6 +756,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/usuario"
             }
           }
@@ -2194,6 +930,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/usuario"
             }
           }
@@ -2238,7 +975,7 @@
         "tags": [
           "usuario"
         ],
-        "summary": "Patch attributes for a model instance and persist it into the data source.",
+        "summary": "Parche los atributos para una instancia modelo y manténgalo en el origen de datos.",
         "operationId": "usuario.prototype.patchAttributes",
         "parameters": [
           {
@@ -2293,6 +1030,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/usuario"
             }
           }
@@ -2313,13 +1051,13 @@
         "tags": [
           "usuario"
         ],
-        "summary": "Find first instance of the model matched by filter from the data source.",
+        "summary": "Encuentre la primera instancia del modelo que coincida con el filtro del origen de datos.",
         "operationId": "usuario.findOne",
         "parameters": [
           {
             "name": "filter",
             "in": "query",
-            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{\"where\":{\"something\":\"value\"}}`).",
+            "description": "Filtros que definen los campos: `where`,` include`, `order`,` offset` y `limit` - debe ser una cadena codificada en JSON (`{\"where\":{\"something\":\"value\"}}`).",
             "required": false,
             "type": "string",
             "format": "JSON"
@@ -2658,6 +1396,1289 @@
         "deprecated": false
       }
     },
+    "/perfiles": {
+      "post": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Cree una nueva instancia del modelo y guárdela en el origen de datos.",
+        "operationId": "perfil.create",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Parche una instancia de modelo existente o inserte una nueva en el origen de datos.",
+        "operationId": "perfil.patchOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.",
+        "operationId": "perfil.replaceOrCreate__put_perfiles",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Encuentre todas las instancias del modelo que coincidan con el filtro del origen de datos.",
+        "operationId": "perfil.find",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filtros que definen los campos: `where`,` include`, `order`,` offset` y `limit` - debe ser una cadena codificada en JSON (`{\"where\":{\"something\":\"value\"}}`).",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/perfil"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/perfiles/replaceOrCreate": {
+      "post": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.",
+        "operationId": "perfil.replaceOrCreate__post_perfiles_replaceOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/perfiles/upsertWithWhere": {
+      "post": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Actualice una instancia de modelo existente o inserte una nueva en el origen de datos según los criterios (Where).",
+        "operationId": "perfil.upsertWithWhere",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/perfiles/{id}/exists": {
+      "get": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Compruebe si existe una instancia de modelo en el origen de datos.",
+        "operationId": "perfil.exists__get_perfiles_{id}_exists",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/perfiles/{id}": {
+      "head": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Compruebe si existe una instancia de modelo en el origen de datos.",
+        "operationId": "perfil.exists__head_perfiles_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Encuentre una instancia de modelo por el {{id}} del origen de datos.",
+        "operationId": "perfil.findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.",
+        "operationId": "perfil.replaceById__put_perfiles_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Elimine una instancia de modelo mediante el {{id}} del origen de datos.",
+        "operationId": "perfil.deleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Parche los atributos para una instancia modelo y manténgalo en el origen de datos.",
+        "operationId": "perfil.prototype.patchAttributes",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "perfil id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/perfiles/{id}/replace": {
+      "post": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.",
+        "operationId": "perfil.replaceById__post_perfiles_{id}_replace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/perfiles/findOne": {
+      "get": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Encuentre la primera instancia del modelo que coincida con el filtro del origen de datos.",
+        "operationId": "perfil.findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filtros que definen los campos: `where`,` include`, `order`,` offset` y `limit` - debe ser una cadena codificada en JSON (`{\"where\":{\"something\":\"value\"}}`).",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/perfiles/update": {
+      "post": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Actualice las instancias del modelo que coincidan con la fuente de datos (Where).",
+        "operationId": "perfil.updateAll",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/perfil"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "Information related to the outcome of the operation",
+              "type": "object",
+              "properties": {
+                "count": {
+                  "description": "The number of instances updated",
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/perfiles/count": {
+      "get": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Cuente las instancias del modelo que coincidan con la fuente de datos (Where).",
+        "operationId": "perfil.count",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/perfiles/change-stream": {
+      "post": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Crear una secuencia de cambios.",
+        "operationId": "perfil.createChangeStream__post_perfiles_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "formData",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "perfil"
+        ],
+        "summary": "Crear una secuencia de cambios.",
+        "operationId": "perfil.createChangeStream__get_perfiles_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/{id}/fichas": {
+      "get": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Capta la relación hasOne fichas.",
+        "operationId": "estudio.prototype.__get__fichas",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "estudio id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/ficha"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Crea una nueva instancia en fichas de este modelo.",
+        "operationId": "estudio.prototype.__create__fichas",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "estudio id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ficha"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/ficha"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Actualizar fichas de este modelo.",
+        "operationId": "estudio.prototype.__update__fichas",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "estudio id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ficha"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/ficha"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Suprime fichas de este modelo.",
+        "operationId": "estudio.prototype.__destroy__fichas",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "estudio id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Request was successful"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios": {
+      "post": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Cree una nueva instancia del modelo y guárdela en el origen de datos.",
+        "operationId": "estudio.create",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Parche una instancia de modelo existente o inserte una nueva en el origen de datos.",
+        "operationId": "estudio.patchOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.",
+        "operationId": "estudio.replaceOrCreate__put_estudios",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Encuentre todas las instancias del modelo que coincidan con el filtro del origen de datos.",
+        "operationId": "estudio.find",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filtros que definen los campos: `where`,` include`, `order`,` offset` y `limit` - debe ser una cadena codificada en JSON (`{\"where\":{\"something\":\"value\"}}`).",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/estudio"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/replaceOrCreate": {
+      "post": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Reemplace una instancia de modelo existente o inserte una nueva en el origen de datos.",
+        "operationId": "estudio.replaceOrCreate__post_estudios_replaceOrCreate",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/upsertWithWhere": {
+      "post": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Actualice una instancia de modelo existente o inserte una nueva en el origen de datos según los criterios (Where).",
+        "operationId": "estudio.upsertWithWhere",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/{id}/exists": {
+      "get": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Compruebe si existe una instancia de modelo en el origen de datos.",
+        "operationId": "estudio.exists__get_estudios_{id}_exists",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/{id}": {
+      "head": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Compruebe si existe una instancia de modelo en el origen de datos.",
+        "operationId": "estudio.exists__head_estudios_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "exists": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Encuentre una instancia de modelo por el {{id}} del origen de datos.",
+        "operationId": "estudio.findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.",
+        "operationId": "estudio.replaceById__put_estudios_{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Elimine una instancia de modelo mediante el {{id}} del origen de datos.",
+        "operationId": "estudio.deleteById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Parche los atributos para una instancia modelo y manténgalo en el origen de datos.",
+        "operationId": "estudio.prototype.patchAttributes",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "estudio id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/{id}/replace": {
+      "post": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Reemplace los atributos para una instancia del modelo y manténgalo en el origen de datos.",
+        "operationId": "estudio.replaceById__post_estudios_{id}_replace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Model id",
+            "required": true,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "Model instance data",
+            "required": false,
+            "schema": {
+              "description": "Model instance data",
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/findOne": {
+      "get": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Encuentre la primera instancia del modelo que coincida con el filtro del origen de datos.",
+        "operationId": "estudio.findOne",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filtros que definen los campos: `where`,` include`, `order`,` offset` y `limit` - debe ser una cadena codificada en JSON (`{\"where\":{\"something\":\"value\"}}`).",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/update": {
+      "post": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Actualice las instancias del modelo que coincidan con la fuente de datos (Where).",
+        "operationId": "estudio.updateAll",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          },
+          {
+            "name": "data",
+            "in": "body",
+            "description": "An object of model property name/value pairs",
+            "required": false,
+            "schema": {
+              "description": "An object of model property name/value pairs",
+              "$ref": "#/definitions/estudio"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "description": "Information related to the outcome of the operation",
+              "type": "object",
+              "properties": {
+                "count": {
+                  "description": "The number of instances updated",
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/count": {
+      "get": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Cuente las instancias del modelo que coincidan con la fuente de datos (Where).",
+        "operationId": "estudio.count",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Criteria to match model instances",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/estudios/change-stream": {
+      "post": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Crear una secuencia de cambios.",
+        "operationId": "estudio.createChangeStream__post_estudios_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "formData",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "estudio"
+        ],
+        "summary": "Crear una secuencia de cambios.",
+        "operationId": "estudio.createChangeStream__get_estudios_change-stream",
+        "parameters": [
+          {
+            "name": "options",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "JSON"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request was successful",
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
     "/fichas": {
       "post": {
         "tags": [
@@ -2672,6 +2693,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/ficha"
             }
           }
@@ -2699,6 +2721,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/ficha"
             }
           }
@@ -2726,6 +2749,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/ficha"
             }
           }
@@ -2750,7 +2774,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{\"where\":{\"something\":\"value\"}}`).",
+            "description": "Filtros que definen los campos: `where`,` include`, `order`,` offset` y `limit` - debe ser una cadena codificada en JSON (`{\"where\":{\"something\":\"value\"}}`).",
             "required": false,
             "type": "string",
             "format": "JSON"
@@ -2784,6 +2808,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/ficha"
             }
           }
@@ -2957,6 +2982,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/ficha"
             }
           }
@@ -3001,7 +3027,7 @@
         "tags": [
           "ficha"
         ],
-        "summary": "Patch attributes for a model instance and persist it into the data source.",
+        "summary": "Parche los atributos para una instancia modelo y manténgalo en el origen de datos.",
         "operationId": "ficha.prototype.patchAttributes",
         "parameters": [
           {
@@ -3056,6 +3082,7 @@
             "description": "Model instance data",
             "required": false,
             "schema": {
+              "description": "Model instance data",
               "$ref": "#/definitions/ficha"
             }
           }
@@ -3076,13 +3103,13 @@
         "tags": [
           "ficha"
         ],
-        "summary": "Find first instance of the model matched by filter from the data source.",
+        "summary": "Encuentre la primera instancia del modelo que coincida con el filtro del origen de datos.",
         "operationId": "ficha.findOne",
         "parameters": [
           {
             "name": "filter",
             "in": "query",
-            "description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string (`{\"where\":{\"something\":\"value\"}}`).  See https://loopback.io/doc/en/lb3/Querying-data.html#using-stringified-json-in-rest-queries for more details.",
+            "description": "Filtros que definen los campos: `where`,` include`, `order`,` offset` y `limit` - debe ser una cadena codificada en JSON (`{\"where\":{\"something\":\"value\"}}`).",
             "required": false,
             "type": "string",
             "format": "JSON"
@@ -3234,13 +3261,13 @@
   },
   "tags": [
     {
+      "name": "usuario"
+    },
+    {
       "name": "perfil"
     },
     {
-      "name": "muestreo"
-    },
-    {
-      "name": "usuario"
+      "name": "estudio"
     },
     {
       "name": "ficha"
@@ -3260,6 +3287,40 @@
     "text/javascript"
   ],
   "definitions": {
+    "x-any": {
+      "properties": {}
+    },
+    "AccessToken": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ttl": {
+          "default": 1209600,
+          "description": "time to live in seconds (2 weeks by default)",
+          "type": "number",
+          "format": "double"
+        },
+        "scopes": {
+          "description": "Array of scopes granted to this access token.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "userId": {
+          "$ref": "#/definitions/ObjectID"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
     "perfil": {
       "properties": {
         "nombre": {
@@ -3293,8 +3354,49 @@
       ],
       "additionalProperties": false
     },
-    "x-any": {
-      "properties": {}
+    "estudio": {
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "id": {
+          "$ref": "#/definitions/ObjectID"
+        },
+        "userId": {
+          "$ref": "#/definitions/ObjectID"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "usuario": {
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "realm": {
+          "type": "string"
+        },
+        "emailVerified": {
+          "type": "boolean"
+        },
+        "id": {
+          "$ref": "#/definitions/ObjectID"
+        }
+      },
+      "required": [
+        "username",
+        "email"
+      ],
+      "additionalProperties": false
     },
     "ficha": {
       "properties": {
@@ -3323,120 +3425,6 @@
       "required": [
         "titulo",
         "lugar"
-      ],
-      "additionalProperties": false
-    },
-    "muestreo": {
-      "properties": {
-        "rawline": {
-          "type": "string"
-        },
-        "rawfields": {
-          "type": "string"
-        },
-        "latitud": {
-          "type": "number",
-          "format": "double"
-        },
-        "longitud": {
-          "type": "number",
-          "format": "double"
-        },
-        "fecha": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "hora": {
-          "type": "string"
-        },
-        "fecha_hora": {
-          "type": "string"
-        },
-        "temperatura_interna": {
-          "type": "number",
-          "format": "double"
-        },
-        "temperatura_aire": {
-          "type": "number",
-          "format": "double"
-        },
-        "temperatura_agua": {
-          "type": "number",
-          "format": "double"
-        },
-        "presion": {
-          "type": "number",
-          "format": "double"
-        },
-        "sensor_adicional": {
-          "type": "number",
-          "format": "double"
-        },
-        "id": {
-          "$ref": "#/definitions/ObjectID"
-        },
-        "userId": {
-          "$ref": "#/definitions/ObjectID"
-        }
-      },
-      "required": [
-        "rawline",
-        "rawfields"
-      ],
-      "additionalProperties": false
-    },
-    "AccessToken": {
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "ttl": {
-          "default": 1209600,
-          "description": "time to live in seconds (2 weeks by default)",
-          "type": "number",
-          "format": "double"
-        },
-        "scopes": {
-          "description": "Array of scopes granted to this access token.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "created": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "userId": {
-          "$ref": "#/definitions/ObjectID"
-        }
-      },
-      "required": [
-        "id"
-      ],
-      "additionalProperties": false
-    },
-    "usuario": {
-      "properties": {
-        "username": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "realm": {
-          "type": "string"
-        },
-        "emailVerified": {
-          "type": "boolean"
-        },
-        "id": {
-          "$ref": "#/definitions/ObjectID"
-        }
-      },
-      "required": [
-        "username",
-        "email"
       ],
       "additionalProperties": false
     },
