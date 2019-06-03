@@ -48,7 +48,7 @@ api.termodaq.com.ve/
 Para una documentación completa ingrese al siguiente HUB:
 
 ```txt
-https://app.swaggerhub.com/apis-docs/ireiser/termodaq_api/1.0.0#/
+https://app.swaggerhub.com/apis-docs/ireiser/termodaq_api/1.0.0/
 ```
 
 ### Modelo ObjectIDstring
@@ -112,6 +112,16 @@ pattern: ^[a-fA-F\d]{24}$
   temperatura_agua: number($double),
   presion: number($double),
   sensor_adicional: number($double),
+  id: ObjectIDstring,
+  userId: ObjectIDstring
+}
+```
+
+### Modelo Etudio
+
+```javascript
+{
+  data: [],
   id: ObjectIDstring,
   userId: ObjectIDstring
 }
