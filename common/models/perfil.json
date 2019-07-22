@@ -1,6 +1,6 @@
 {
   "name": "perfil",
-  "plural": "perfiles",
+  "plural": "perfil",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

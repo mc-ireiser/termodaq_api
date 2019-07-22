@@ -1,6 +1,6 @@
 {
   "name": "ficha",
-  "plural": "fichas",
+  "plural": "ficha",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

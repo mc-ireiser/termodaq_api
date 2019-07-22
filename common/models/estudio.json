@@ -1,6 +1,6 @@
 {
   "name": "estudio",
-  "plural": "estudios",
+  "plural": "estudio",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -16,12 +16,12 @@
   },
   "validations": [],
   "relations": {
-    "fichas": {
+    "ficha": {
       "type": "hasOne",
       "model": "ficha",
       "foreignKey": "userId"
     },
-    "muestreos": {
+    "muestreo": {
       "type": "hasMany",
       "model": "muestreo",
       "foreignKey": "userId"

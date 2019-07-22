@@ -1,6 +1,6 @@
 {
   "name": "usuario",
-  "plural": "usuarios",
+  "plural": "usuario",
   "base": "User",
   "idInjection": true,
   "options": {
@@ -26,12 +26,12 @@
         "disableInclude": true
       }
     },
-    "perfiles": {
+    "perfil": {
       "type": "hasOne",
       "model": "perfil",
       "foreignKey": "userId"
     },
-    "estudios": {
+    "estudio": {
       "type": "hasMany",
       "model": "estudio",
       "foreignKey": "userId"
