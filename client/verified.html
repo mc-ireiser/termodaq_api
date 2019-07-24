@@ -1,69 +1,33 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>termoDaQ</title>
-  </head>
-  <body>
-    <div id="app" class="container text-center align-middle" v-cloak>
-      <div class="center">
-        <p class="display-1 text-muted mb-5">La operación se ha completado</p>
-        <h1 class="h2 mb-4">Su cuenta ha sido verificada de manera exitosa.</h1>
-        <a class="btn btn-primary" :href="loginRoute">
-          Iniciar Sesión
-        </a>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="./assets/favicon.ico">
+  <title>termoDaQ - Verificación</title>
+  <link rel="stylesheet" href="./assets/coreui.min.css">
+</head>
+<body>
+  <div id="app" class="app flex-row align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-10 col-md-8 col-lg-6">
+          <div class="card-group">
+            <div class="card text-white bg-primary py-5">
+              <div class="card-body text-center">
+                <div>
+                  <h2>¡Operación exitosa!</h2>
+                  <p class="mt-4">Su cuenta fue activada de manera exitosa, en adelante tendrá acceso a todas las
+                    funcionalidades del sistema.</p>
+                  <a class="btn active mt-3 btn-primary" href="http://localhost:3000/auth/login" role="button">Iniciar sesión</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
-
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-<script>
-  var app = new Vue({
-    el: '#app',
-    data: {
-      loginRoute: '/'
-    }
-  })
-</script>
-
-<style>
-  body {
-    margin: 0;
-    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    text-align: left;
-    background-color: #f5f7fb;
-  }
-
-  .container {
-    width: 100%;
-    height: 90vh;
-    padding: 0.75rem;
-    margin: 0 auto;
-    display: table;
-  }
-
-  .display-1 {
-    font-size: 4.5rem;
-    font-weight: 300;
-    line-height: 1.1;
-  }
-
-  h2, .h2 {
-    font-size: 1.75rem;
-  }
-
-  .center {
-    display: table-cell;
-    vertical-align: middle;
-  }
-
-</style>
