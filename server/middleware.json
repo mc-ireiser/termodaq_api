@@ -7,8 +7,8 @@
     "cors": {
       "params": {
         "origin": false,
-        "credentials": true,
-        "maxAge": 0
+        "credentials": false,
+        "maxAge": 86400
       }
     },
     "helmet#xssFilter": {},
