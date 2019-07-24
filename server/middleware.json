@@ -7,7 +7,7 @@
     "cors": {
       "params": {
         "origin": false,
-        "credentials": false,
+        "credentials": true,
         "maxAge": 0
       }
     },
