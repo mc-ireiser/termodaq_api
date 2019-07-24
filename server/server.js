@@ -6,9 +6,7 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');
 var app = module.exports = loopback();
-var cors = require('cors');
 
-app.use(cors());
 app.use(loopback.static(path.resolve(__dirname, '../client')));
 
 app.start = function() {
