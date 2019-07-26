@@ -43,7 +43,7 @@
     "dataSource": "db_mongo",
     "public": true,
     "options": {
-      "emailVerificationRequired": true
+      "emailVerificationRequired": false
     }
   },
   "perfil": {
