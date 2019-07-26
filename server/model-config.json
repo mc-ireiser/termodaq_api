@@ -48,7 +48,7 @@
   },
   "perfil": {
     "dataSource": "db_mongo",
-    "public": false
+    "public": true
   },
   "estudio": {
     "dataSource": "db_mongo",
@@ -56,6 +56,6 @@
   },
   "ficha": {
     "dataSource": "db_mongo",
-    "public": false
+    "public": true
   }
 }
