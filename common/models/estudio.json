@@ -20,11 +20,6 @@
       "type": "hasOne",
       "model": "ficha",
       "foreignKey": "userId"
-    },
-    "muestreo": {
-      "type": "hasMany",
-      "model": "muestreo",
-      "foreignKey": "userId"
     }
   },
   "acls": [
