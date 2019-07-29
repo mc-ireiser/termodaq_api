@@ -1,13 +1,13 @@
 'use strict';
 
-var path = require('path');
+const path = require('path');
 
 module.exports = function(Usuario) {
   // send verification email after registration
   Usuario.afterRemote('create', function(context, userInstance, next) {
     console.log('> Usuario.afterRemote triggered');
 
-    var options = {
+    let options = {
       type: 'email',
       to: userInstance.email,
       from: process.env.EMAIL_FROM,
@@ -33,10 +33,10 @@ module.exports = function(Usuario) {
     console.log('> Usuario.resetPasswordRequest triggered');
 
     let portNumber;
-    let protocol = process.env.EMAIL_LOCAL_SERVER_PROTOCOL;
-    let portELS = process.env.EMAIL_LOCAL_SERVER_PORT;
+    const protocol = process.env.EMAIL_LOCAL_SERVER_PROTOCOL;
+    const portELS = process.env.EMAIL_LOCAL_SERVER_PORT;
 
-    if (protocol == 'http' && portELS == 443) {
+    if (protocol === 'http' && portELS === 443) {
       portNumber = '';
     } else {
       portNumber = ':' + process.env.EMAIL_LOCAL_SERVER_PORT;
