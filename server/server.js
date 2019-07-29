@@ -2,10 +2,10 @@
 
 require('dotenv').config();
 
-let loopback = require('loopback');
-let boot = require('loopback-boot');
-let path = require('path');
-let app = module.exports = loopback();
+const loopback = require('loopback');
+const boot = require('loopback-boot');
+const path = require('path');
+const app = module.exports = loopback();
 
 app.use(loopback.static(path.resolve(__dirname, '../client')));
 
@@ -13,10 +13,10 @@ app.start = function() {
   // start the web server
   return app.listen(function() {
     app.emit('started');
-    let baseUrl = app.get('url').replace(/\/$/, '');
+    const baseUrl = app.get('url').replace(/\/$/, '');
     console.log('Web server listening at: %s', baseUrl);
     if (app.get('loopback-component-explorer')) {
-      let explorerPath = app.get('loopback-component-explorer').mountPath;
+      const explorerPath = app.get('loopback-component-explorer').mountPath;
       console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
     }
   });

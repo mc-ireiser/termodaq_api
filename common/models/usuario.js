@@ -7,7 +7,7 @@ module.exports = function(Usuario) {
   Usuario.afterRemote('create', function(context, userInstance, next) {
     console.log('> Usuario.afterRemote triggered');
 
-    let options = {
+    const options = {
       type: 'email',
       to: userInstance.email,
       from: process.env.EMAIL_FROM,
