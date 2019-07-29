@@ -1,5 +1,6 @@
 # termoDaQ API
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bfcdb292fc6b4f0eb3d38d40d1ef9c89)](https://app.codacy.com/app/mc.ireiser/termodaq_api?utm_source=github.com&utm_medium=referral&utm_content=mc-ireiser/termodaq_api&utm_campaign=Badge_Grade_Dashboard)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmc-ireiser%2Ftermodaq_api.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmc-ireiser%2Ftermodaq_api?ref=badge_shield)
 
 API para la gestion de estudios y usuarios del ecosistema termoDaQ
