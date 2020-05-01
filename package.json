@@ -16,7 +16,7 @@
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.2.0",
     "helmet": "^3.10.0",
     "loopback": "^3.22.0",
     "loopback-boot": "^2.6.5",
