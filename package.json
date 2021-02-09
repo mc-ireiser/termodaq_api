@@ -24,7 +24,7 @@
     "loopback-connector-mongodb": "^4.2.0",
     "loopback-connector-sendgrid": "^2.2.4",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^3.0.0",
+    "strong-error-handler": "^3.5.0",
     "snyk": "^1.316.1"
   },
   "devDependencies": {
