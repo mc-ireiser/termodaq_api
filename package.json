@@ -18,7 +18,7 @@
     "cors": "^2.5.2",
     "dotenv": "^8.0.0",
     "helmet": "^3.10.0",
-    "loopback": "^3.22.0",
+    "loopback": "^3.28.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.4.0",
     "loopback-connector-mongodb": "^4.2.0",
